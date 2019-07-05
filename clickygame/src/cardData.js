@@ -1,56 +1,56 @@
 const cardData = [{
     "id": 1,
-    "src": "./assets/images/bird.jpg",
+    "img": "./assets/images/bird.jpg",
     "title": "bird",
     "description": "bird"
 },
 {
     "id": 2,
-    "src": "./assets/images/bananaman.jpg",
-    "title": "bananaman",
+    "img": "./assets/images/bananaman.jpg",
+    "title": "banana man",
     "description": "bananaman"
 },
 {
     "id": 3,
-    "src": "/assets/images/catlaugh.jpg",
-    "title": "catlaugh",
+    "img": "/assets/images/catlaugh.jpg",
+    "title": "cat laughing",
     "description": "catlaugh"
 },
 {
     "id": 4,
-    "src": "./assets/images/catsphinx.jpg",
-    "title": "catsphinx",
+    "img": "./assets/images/catsphinx.jpg",
+    "title": "cat sphinx",
     "description": "catsphinx"
 },
 {
     "id": 5,
-    "src": "./assets/images/ladywithglassesmustache.jpg",
-    "title": "ladywithglassesmustache",
+    "img": "./assets/images/ladywithglassesmustache.jpg",
+    "title": "lady",
     "description": "ladywithglassesmustache"
 },
 {
     "id": 6,
-    "src": "./assets/images/macaque.jpg",
+    "img": "./assets/images/macaque.jpg",
     "title": "macaque",
     "description": "macaque"
 },
 {
     "id": 7,
-    "src": "./assets/images/smileyface.jpg",
-    "title": "smileyface",
+    "img": "./assets/images/smileyface.jpg",
+    "title": "smiley face",
     "description": "smileyface"
 },
 {
     "id": 8,
-    "src": "./assets/images/statutewithiphone.jpg",
-    "title": "statutewithiphone",
-    "description": "statutewithiphone"
+    "img": "./assets/images/statutewithiphone.jpg",
+    "title": "statue with iphone",
+    "description": "statuewithiphone"
 },
 {
     "id": 9,
-    "src": "./assets/images/bird.jpg",
-    "title": "bird",
-    "description": "bird"
+    "img": "./assets/images/statutewomeiphonejpg.jpg",
+    "title": "statue woman with iphone",
+    "description": "statue woman with iphone"
 }
 ]
 

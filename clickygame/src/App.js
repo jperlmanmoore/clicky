@@ -11,7 +11,6 @@ import cardData from './cardData'
 // random sort card
 cardData.sort(() => .5 - Math.random());
 
-
 class App extends Component {
   state = {
     currentScore: 0,
@@ -20,7 +19,6 @@ class App extends Component {
     clicked: [],
     // alert or modal
   }
-
 
   // click state
     // if click false
@@ -41,6 +39,7 @@ class App extends Component {
   
 
     // shuffle cards function
+      // look to quiz game hw to see how I did  basic shuffle
   
 render() {
   return(
