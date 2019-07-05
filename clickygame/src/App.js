@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
 import Cards from './components/Cards/index'
 import Footer from './components/Footer/index'
 import Nav from './components/Nav/index'
 import Title from './components/Title/index'
 import Wrapper from './components/Wrapper/index'
-import cardData from './cardData'
+import cardData from './cardData.json'
 
 
 // random sort card
-cardData.sort(() => .5 - Math.random());
+
 
 class App extends Component {
   state = {
@@ -20,12 +19,36 @@ class App extends Component {
     // alert or modal
   }
 
-  // click state
+  // incrementCounter = () => {
+
+  // }
+
+  clickState = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      // mark clicked
+      this.incrementCounter();
+    } else {
+      this.resetGame()
+    }
+  }
+
+
     // if click false
         // makr clicked
         // increment counter
     // if clicked true
         // reset game
+
+ resetGame = () => {
+  this.state({
+    currentScore: 0,
+    highScore: this.state.highScore,
+
+
+  })
+  cardData.sort(() => .5 - Math.random()) // randomSort()
+}
+
 
   // reset game
     // reset score
