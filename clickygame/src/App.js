@@ -1,32 +1,34 @@
 import React, { Component } from 'react'
-import Cards from './components/Cards/index'
-import Footer from './components/Footer/index'
-import Nav from './components/Nav/index'
-import Title from './components/Title/index'
-import Wrapper from './components/Wrapper/index'
+import Cards from './components/Cards/index.js'
+import Footer from './components/Footer/index.js'
+import Nav from './components/Nav/index.js'
+import Title from './components/Title/index.js'
+import Wrapper from './components/Wrapper/index.js'
 import cardData from './cardData.json'
 
 
 // random sort card
-
+const randomize = array => {
+  array.forEach(cardData => {
+    cardData.sort(() => .5 - Math.random())
+  });
+  return array
+}
 
 class App extends Component {
   state = {
     currentScore: 0,
     highScore: 0,
-    Cards,
-    clicked: [],
+    cardData,
+    clickedCard: [],
     // alert or modal
   }
 
-  // incrementCounter = () => {
-
-  // }
-
-  clickState = id => {
+  click = id => {
     if (this.state.clicked.indexOf(id) === -1) {
       // mark clicked
       this.incrementCounter();
+      randomize(this.state.clicked)
     } else {
       this.resetGame()
     }
@@ -39,6 +41,7 @@ class App extends Component {
     // if clicked true
         // reset game
 
+
  resetGame = () => {
   this.state({
     currentScore: 0,
@@ -46,7 +49,7 @@ class App extends Component {
 
 
   })
-  cardData.sort(() => .5 - Math.random()) // randomSort()
+   // randomSort()
 }
 
 
@@ -54,23 +57,55 @@ class App extends Component {
     // reset score
     // keep display high score
     // empty clicked arrar
+resetGame = () => {
+  this.setState({
+    highScore: this.state.highScore,
+    currentScore: 0,
+    clickedCard: []
+  });
+  this.randomize()
+}
+
+
 
   
   // increment function
-    // const newScore = state score +1
+    // const newScore = currnet score +1
     // if new score =  higher than high score, high score = new score
   
+  scoreCounter = () => {
+    const increment = this.state.currentScore +1;
+    this.setState({
+      currentScore: increment,
+      youWin: ""
+    })
 
-    // shuffle cards function
-      // look to quiz game hw to see how I did  basic shuffle
-  
+    if(increment >= this.state.highScore) {
+      this.setState({highScore: increment})    
+    }
+
+  }
+
+
+   
 render() {
   return(
-  <div className = "clicky" >
+  <div className="clicky" >
       <Wrapper>
-        <Nav />
-        <Title>Clicky</Title>
-        <Cards />
+        <Nav
+        title="Clicky"
+        score={this.state.currentScore}
+        highScore={this.state.highScore} 
+        />
+        <Title>Don't click the same card twice!</Title>
+        {this.state.cardData.map((card) => (
+          <Cards 
+            id={card.id}
+            key={card.id}
+            img={card.img}
+            title={card.title}
+            />
+        ))}
         <Footer />
       </Wrapper>
   </div>

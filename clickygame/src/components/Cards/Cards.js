@@ -7,7 +7,7 @@ const Cards = (props) => {
             <div className="img-container">
                 <img 
                     alt={props.description} 
-                    src={props.image}
+                    src={props.img}
                 />
             </div>
             <div className="content">

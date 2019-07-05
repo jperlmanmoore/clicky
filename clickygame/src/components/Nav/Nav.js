@@ -1,11 +1,27 @@
 import React from "react";
 import "./style.css";
 
-const Cards = (props) => {
+const Nav = (props) => {
     return (
-        <div>
-        </div>
-    )
+        <nav>
+            <ul>
+                <li>
+                    {/* title link */}
+                    <a href='https://github.com/jperlmanmoore/clicky'>{props.title}</a>
+                </li>
+                <li>
+                    {/* win or lose */}
+                </li>
+                <li>
+                    {/* current score */}
+                </li>
+                <li>
+                    {/* high score */}
+                </li>
+
+            </ul>
+        </nav>
+    );
 };
 
-export default Cards
+export default Nav
