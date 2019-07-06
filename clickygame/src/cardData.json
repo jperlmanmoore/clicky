@@ -1,55 +1,64 @@
 [{
     "id": 1,
-    "img": "./assets/images/bird.jpg",
+    "img": "assets/images/bird.jpg",
     "title": "bird",
-    "description": "bird"
+    "alt": "bird",
+    "clicked": false
 },
 {
     "id": 2,
-    "img": "./assets/images/bananaman.jpg",
+    "img": "assets/images/bananaman.jpg",
     "title": "banana man",
-    "description": "bananaman"
+    "alt": "bananaman",
+    "clicked": false
 },
 {
     "id": 3,
-    "img": "/assets/images/catlaugh.jpg",
+    "img": "assets/images/catlaugh.jpg",
     "title": "cat laughing",
-    "description": "catlaugh"
+    "alt": "catlaugh",
+    "clicked": false
 },
 {
     "id": 4,
-    "img": "./assets/images/catsphinx.jpg",
+    "img": "assets/images/catsphinx.jpg",
     "title": "cat sphinx",
-    "description": "catsphinx"
+    "alt": "catsphinx",
+    "clicked": false
 },
 {
     "id": 5,
-    "img": "./assets/images/ladywithglassesmustache.jpg",
+    "img": "assets/images/ladywithglassesmustache.jpg",
     "title": "lady",
-    "description": "ladywithglassesmustache"
+    "alt": "ladywithglassesmustache",
+    "clicked": false
 },
 {
     "id": 6,
-    "img": "./assets/images/macaque.jpg",
+    "img": "assets/images/macaque.jpg",
     "title": "macaque",
-    "description": "macaque"
+    "alt": "macaque",
+    "clicked": false
 },
 {
     "id": 7,
-    "img": "./assets/images/smileyface.jpg",
+    "img": "assets/images/smileyface.jpg",
     "title": "smiley face",
-    "description": "smileyface"
+    "alt": "smileyface",
+    "clicked": false
 },
 {
     "id": 8,
-    "img": "./assets/images/statutewithiphone.jpg",
+    "img": "assets/images/statutewithiphone.jpg",
     "title": "statue with iphone",
-    "description": "statuewithiphone"
+    "alt": "statuewithiphone",
+    "clicked": false
 },
 {
     "id": 9,
-    "img": "./assets/images/statutewomeiphonejpg.jpg",
+    "img": "assets/images/statutewomeiphonejpg.jpg",
     "title": "statue woman with iphone",
-    "description": "statue woman with iphone"
+    "alt": "statue woman with iphone",
+    "clicked": false
 }
 ]

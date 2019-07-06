@@ -3,10 +3,11 @@ import "./style.css";
 
 const Title = (props) => {
     return (
-        <div>
-            
-            
+        <div className="titleClicky">
+            <h2>CLICKY</h2>
+            <h4>{'do not pick the same one twice\n'}</h4>
         </div>
+        
     )
 };
 
