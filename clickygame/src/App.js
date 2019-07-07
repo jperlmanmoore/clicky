@@ -10,26 +10,21 @@ import shuffle from 'shuffle-array'
 shuffle(cardData) 
 console.log(cardData)
 
-
 class App extends Component {
   state = {
     currentScore: 0,
     highScore: 0,
-    cardData,
-    clickedCard: [],
+    clicked: false,
+    cardData
     // alert or modal
   }
 
-  
-
   scoreCounter = () => {
-    const increment = this.state.currentScore + 1;
     this.setState({
-      currentScore: increment,
-      youWin: ""
+      currentScore: this.state.currentScore + 1
     })
-    if (increment >= this.state.highScore) {
-      this.setState({ highScore: increment })
+    if (this.state.currentScore >= this.state.highScore) {
+      this.setState({ highScore: this.state.currentScore })
     }
   }
 
@@ -37,14 +32,16 @@ class App extends Component {
     this.setState({
       highScore: this.state.highScore,
       currentScore: 0,
-      clickedCard: []
     });
   }
 
-  handleClick = id => { 
-    if (this.state.clickedCard.indexOf(id) === false) {
-      this.setState({ clickedCard: this.state.clickedCard.push(this.props.id) });
+  handleClick = () => {
+    console.log("clicked")
+    if (this.state.clicked === false) {
+      this.setState({ clicked: this.state.clicked === true });
+      console.log(this)
       this.scoreCounter();
+      shuffle(cardData)
     } else {
       this.resetGame()
     }
