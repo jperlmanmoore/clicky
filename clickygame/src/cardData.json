@@ -1,13 +1,13 @@
 [{
     "id": 1,
-    "img": "assets/images/bird.jpg",
+    "img": "./images/bird.jpg",
     "title": "bird",
     "alt": "bird",
     "clicked": false
 },
 {
     "id": 2,
-    "img": "assets/images/bananaman.jpg",
+    "img": "./images/bananaman.jpg",
     "title": "banana man",
     "alt": "bananaman",
     "clicked": false

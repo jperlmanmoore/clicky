@@ -1,16 +1,18 @@
 import React from "react"
 import "./style.css"
 
-const Cards = props => {
+function Cards(props) {
     return (
         <div className="cardContainter">
             <div className="card">
-                <div
-                    className="img-container"
+                <div 
+                className="img-container" 
                 >
                     <img
                         alt={props.alt}
-                        style={{ backgroundImage: `url(${props.img})` }} />
+                        src={props.img}
+                        onClick={this.handleClick()}
+                    />
                 </div>
                 <div className="content">
                     <h3>{props.title}</h3>

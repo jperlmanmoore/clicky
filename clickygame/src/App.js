@@ -16,10 +16,11 @@ class App extends Component {
 
   // random sort card
   randomize = cardData => {
+    let cardDataShuffle = []
     cardData.forEach(cardData => {
       cardData.sort(() => .5 - Math.random())
     });
-    return cardData
+    return cardDataShuffle
   }
 
   scoreCounter = () => {
@@ -37,12 +38,14 @@ class App extends Component {
     this.setState({
       highScore: this.state.highScore,
       currentScore: 0,
-      clicked: []
+      clickedCard: []
     });
     this.randomize()
   }
 
-  handleClick = id => {
+  handleClick = (event, id) => {
+    event.preventDefault();
+    
     if (this.state.clicked.indexOf(id) === false) {
       this.state.clickedCard.push(this.id);
       this.scoreCounter();
@@ -59,6 +62,7 @@ class App extends Component {
             // title="CLICKY"
             score={this.state.currentScore}
             highScore={this.state.highScore}
+            youWin={this.state.youWin}
           />
           <Title />
           {this.state.cardData.map((card) => (
@@ -67,7 +71,6 @@ class App extends Component {
               key={card.id}
               img={card.img}
               title={card.title}
-              onClick={this.handleClick}
             />
           ))}
         </Wrapper>
