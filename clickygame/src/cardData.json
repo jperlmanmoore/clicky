@@ -1,64 +1,87 @@
-[{
-    "id": 1,
-    "img": "./images/bird.jpg",
-    "title": "bird",
-    "alt": "bird",
-    "clicked": false
-},
-{
-    "id": 2,
-    "img": "./images/bananaman.jpg",
-    "title": "banana man",
-    "alt": "bananaman",
-    "clicked": false
-},
-{
-    "id": 3,
-    "img": "assets/images/catlaugh.jpg",
-    "title": "cat laughing",
-    "alt": "catlaugh",
-    "clicked": false
-},
-{
-    "id": 4,
-    "img": "assets/images/catsphinx.jpg",
-    "title": "cat sphinx",
-    "alt": "catsphinx",
-    "clicked": false
-},
-{
-    "id": 5,
-    "img": "assets/images/ladywithglassesmustache.jpg",
-    "title": "lady",
-    "alt": "ladywithglassesmustache",
-    "clicked": false
-},
-{
-    "id": 6,
-    "img": "assets/images/macaque.jpg",
-    "title": "macaque",
-    "alt": "macaque",
-    "clicked": false
-},
-{
-    "id": 7,
-    "img": "assets/images/smileyface.jpg",
-    "title": "smiley face",
-    "alt": "smileyface",
-    "clicked": false
-},
-{
-    "id": 8,
-    "img": "assets/images/statutewithiphone.jpg",
-    "title": "statue with iphone",
-    "alt": "statuewithiphone",
-    "clicked": false
-},
-{
-    "id": 9,
-    "img": "assets/images/statutewomeiphonejpg.jpg",
-    "title": "statue woman with iphone",
-    "alt": "statue woman with iphone",
-    "clicked": false
-}
-]
+[
+    {
+      "id": 1,
+      "name": "SpongeBob",
+      "img": "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014",
+      "occupation": "Fry Cook",
+      "clicked": false
+    },
+    {
+      "id": 2,
+      "name": "Mr. Krabs",
+      "img": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131",
+      "occupation": "Restaurant Owner",
+      "clicked": false
+    },
+    {
+      "id": 3,
+      "name": "Squidward",
+      "img": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
+      "occupation": "Cashier",
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "name": "Dexter",
+      "img": "https://s-media-cache-ak0.pinimg.com/originals/fe/32/49/fe32495d45283cd6860ae122f0aeaad9.png",
+      "occupation": "Boy Genius",
+      "clicked": false
+    },
+    {
+      "id": 5,
+      "name": "Courage",
+      "img": "https://vignette4.wikia.nocookie.net/vsbattles/images/3/39/Courage-0.png/revision/latest?cb=20160719055423",
+      "occupation": "A Cowardly Dog",
+      "clicked": false
+    },
+    {
+      "id": 6,
+      "name": "Doug Funnie",
+      "img": "https://vignette1.wikia.nocookie.net/doug/images/3/3b/Doug001.gif/revision/latest?cb=20110807170511",
+      "occupation": "Student",
+      "clicked": false
+    },
+    {
+      "id": 7,
+      "name": "Bugs Bunny",
+      "img": "https://vignette2.wikia.nocookie.net/deathbattlefanon/images/2/2b/Bugs_Bunny.png/revision/latest?cb=20151206010607",
+      "occupation": "Looney Toon",
+      "clicked": false
+    },
+    {
+      "id": 8,
+      "name": "Johnny Bravo",
+      "img": "http://vignette3.wikia.nocookie.net/p__/images/9/9a/Johnny_Bravo.png/revision/latest?cb=20131031233339&path-prefix=protagonist",
+      "occupation": "Ladies Man",
+      "clicked": false
+    },
+    {
+      "id": 9,
+      "name": "Tommy Pickles",
+      "img": "https://vignette4.wikia.nocookie.net/uncyclopedia/images/e/e4/Tommy_Pickles.png/revision/latest?cb=20110530102641",
+      "occupation": "Adventurer",
+      "clicked": false
+    },
+    {
+      "id": 10,
+      "name": "Rocko",
+      "img": "http://vignette3.wikia.nocookie.net/rockosmodernlife/images/9/9e/Rockos-modern-life-4e582a8f06a41.png/revision/latest?cb=20130522173416",
+      "occupation": "Cashier",
+      "clicked": false
+    },
+    {
+      "id": 11,
+      "name": "Captain Planet",
+      "img": "http://vignette2.wikia.nocookie.net/dragon-rap-battles/images/b/b6/Captain_Planet.png/revision/latest?cb=20160911200836",
+      "occupation": "Superhero",
+      "clicked": false
+    },
+    {
+      "id": 12,
+      "name": "Ickis",
+      "img": "http://static.tvtropes.org/pmwiki/pub/images/ickis.png",
+      "occupation": "Ahhhh! A Real Monster!",
+      "clicked": false
+    }
+  ]
+  

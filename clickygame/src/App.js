@@ -4,6 +4,12 @@ import Nav from './components/Nav/index.js'
 import Title from './components/Title/index.js'
 import Wrapper from './components/Wrapper/index.js'
 import cardData from './cardData.json'
+import shuffle from 'shuffle-array'
+
+
+shuffle(cardData) 
+console.log(cardData)
+
 
 class App extends Component {
   state = {
@@ -14,14 +20,7 @@ class App extends Component {
     // alert or modal
   }
 
-  // random sort card
-  randomize = cardData => {
-    let cardDataShuffle = []
-    cardData.forEach(cardData => {
-      cardData.sort(() => .5 - Math.random())
-    });
-    return cardDataShuffle
-  }
+  
 
   scoreCounter = () => {
     const increment = this.state.currentScore + 1;
@@ -40,14 +39,11 @@ class App extends Component {
       currentScore: 0,
       clickedCard: []
     });
-    this.randomize()
   }
 
-  handleClick = (event, id) => {
-    event.preventDefault();
-    
-    if (this.state.clicked.indexOf(id) === false) {
-      this.state.clickedCard.push(this.id);
+  handleClick = id => { 
+    if (this.state.clickedCard.indexOf(id) === false) {
+      this.setState({ clickedCard: this.state.clickedCard.push(this.props.id) });
       this.scoreCounter();
     } else {
       this.resetGame()
@@ -71,6 +67,7 @@ class App extends Component {
               key={card.id}
               img={card.img}
               title={card.title}
+              handleClick={this.handleClick}
             />
           ))}
         </Wrapper>
