@@ -13,7 +13,7 @@ function Cards(props) {
                         src={props.img}
                         onClick={ () => props.handleClick(props.id) }
                         // onChange={this.handleChangeObj.bind(this)}
-                        onMouseDown={ (props.handleChangeObj(props.id))}
+                        // onMouseDown={ (props.handleChangeObj(props.id))}
                     />
                 </div>
                 <div className="content">

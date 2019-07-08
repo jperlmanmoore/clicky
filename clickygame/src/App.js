@@ -53,7 +53,7 @@ class App extends Component {
     shuffle(cardData)
   }
 
-  handleChangeObj = () => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
+  // handleChangeObj = () => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
   // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
 
  
@@ -74,7 +74,7 @@ class App extends Component {
               img={card.img}
               title={card.title}
               handleClick={this.handleClick}
-              handleChangeObj={this.handleChangeObj}
+              // handleChangeObj={this.handleChangeObj}
             />
           ))}
         </Wrapper>
