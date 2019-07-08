@@ -14,11 +14,25 @@ class App extends Component {
   state = {
     currentScore: 0,
     highScore: 0,
-    // clicked: false,
+    clicked: false,
     cardData
     // alert or modal
   }
 
+  handleClick = (id, clicked) => {
+    console.log("clicked")
+    if (this.state.clicked === false) {
+      this.scoreCounter();
+      // this.handleChangeObj()
+      this.setState({ [id]: { [clicked]: true } })
+      console.log(this, "try to change object's clicked value to true")
+      shuffle(cardData)
+    } else {
+      this.resetGame()
+    }
+  }
+ 
+ 
   scoreCounter = () => {
     const thisGameScore = this.state.currentScore + 1
     this.setState({
@@ -39,36 +53,18 @@ class App extends Component {
     shuffle(cardData)
   }
 
-  handleChangeObj = (id, clickec) => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
+  handleChangeObj = () => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
   // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
 
-  handleClick = () => {
-    console.log("clicked")
-    if (this.state.clicked === false) {
-      this.scoreCounter();
-      this.handleChangeObj()
-      this.setState({ clicked: this.state.cardData === true })
-      console.log(this, "try to set state to true")
-      
-      shuffle(cardData)
-    } else {
-      this.resetGame()
-    }
-  }
-
-  // onclick(event) {
-  //   this.handleChangeObj();
-  //   this.handleClick()
-  // }
+ 
 
   render() {
     return (
       <div className="clicky" >
         <Wrapper>
           <Nav
-            score={this.state.currentScore}
+            currentScore={this.state.currentScore}
             highScore={this.state.highScore}
-            youWin={this.state.youWin}
           />
           <Title />
           {this.state.cardData.map((card) => (
