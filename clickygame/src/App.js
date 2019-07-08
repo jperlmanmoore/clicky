@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     currentScore: 0,
     highScore: 0,
-    clicked: false,
+    // clicked: false,
     cardData
     // alert or modal
   }
@@ -39,16 +39,17 @@ class App extends Component {
     shuffle(cardData)
   }
 
-  // handleChangeObj = ({target: {id, clicked}}) => this.setState({ [id]: { ...this.state[id] , [clicked]: true } });
+  handleChangeObj = (id, clickec) => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
   // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
 
   handleClick = () => {
     console.log("clicked")
-    this.setState({ clicked: this.state.clicked === true });
     if (this.state.clicked === false) {
-    
-      console.log(this, "try to set state to true")
       this.scoreCounter();
+      this.handleChangeObj()
+      this.setState({ clicked: this.state.cardData === true })
+      console.log(this, "try to set state to true")
+      
       shuffle(cardData)
     } else {
       this.resetGame()
@@ -77,7 +78,7 @@ class App extends Component {
               img={card.img}
               title={card.title}
               handleClick={this.handleClick}
-              // handleChangeObj={this.handleChangeObj}
+              handleChangeObj={this.handleChangeObj}
             />
           ))}
         </Wrapper>
