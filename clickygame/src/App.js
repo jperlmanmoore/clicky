@@ -7,7 +7,7 @@ import cardData from './cardData.json'
 import shuffle from 'shuffle-array'
 
 
-shuffle(cardData) 
+shuffle(cardData)
 console.log(cardData)
 
 class App extends Component {
@@ -20,26 +20,34 @@ class App extends Component {
   }
 
   scoreCounter = () => {
+    const thisGameScore = this.state.currentScore + 1
     this.setState({
-      currentScore: this.state.currentScore + 1
+      currentScore: thisGameScore
     })
-    if (this.state.currentScore >= this.state.highScore) {
-      this.setState({ highScore: this.state.currentScore })
+    if (thisGameScore >= this.state.highScore) {
+      this.setState({ highScore: thisGameScore })
     }
   }
 
   resetGame = () => {
     this.setState({
-      highScore: this.state.highScore,
       currentScore: 0,
+      highScore: this.state.highScore,
+      clicked: false,
+      cardData
     });
+    shuffle(cardData)
   }
+
+  // handleChangeObj = ({target: {id, clicked}}) => this.setState({ [id]: { ...this.state[id] , [clicked]: true } });
+  // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
 
   handleClick = () => {
     console.log("clicked")
+    this.setState({ clicked: this.state.clicked === true });
     if (this.state.clicked === false) {
-      this.setState({ clicked: this.state.clicked === true });
-      console.log(this)
+    
+      console.log(this, "try to set state to true")
       this.scoreCounter();
       shuffle(cardData)
     } else {
@@ -47,12 +55,16 @@ class App extends Component {
     }
   }
 
+  // onclick(event) {
+  //   this.handleChangeObj();
+  //   this.handleClick()
+  // }
+
   render() {
     return (
       <div className="clicky" >
         <Wrapper>
           <Nav
-            // title="CLICKY"
             score={this.state.currentScore}
             highScore={this.state.highScore}
             youWin={this.state.youWin}
@@ -65,6 +77,7 @@ class App extends Component {
               img={card.img}
               title={card.title}
               handleClick={this.handleClick}
+              // handleChangeObj={this.handleChangeObj}
             />
           ))}
         </Wrapper>

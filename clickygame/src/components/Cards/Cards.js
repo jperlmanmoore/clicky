@@ -11,11 +11,11 @@ function Cards(props) {
                     <img
                         alt={props.alt}
                         src={props.img}
-                        onClick={() => props.handleClick(props.id)}
+                        onClick={ () => props.handleClick(props.id) }
                     />
                 </div>
                 <div className="content">
-                    <h3>{props.name}</h3>
+                    <h3>{props.title}</h3>
                 </div>
             </div>
         </div>
