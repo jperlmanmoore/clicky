@@ -10,10 +10,9 @@ function Cards(props) {
                 >
                     <img
                         alt={props.alt}
+                        id={props.id}
                         src={props.img}
-                        onClick={ () => props.handleClick(props.id) }
-                        // onChange={this.handleChangeObj.bind(this)}
-                        // onMouseDown={ (props.handleChangeObj(props.id))}
+                        onClick={ () => {console.log("img onclick: " + JSON.stringify(props)); props.handleClick(props.keyx);} }
                     />
                 </div>
                 <div className="content">

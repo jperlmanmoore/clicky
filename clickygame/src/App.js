@@ -20,15 +20,25 @@ class App extends Component {
   }
 
   handleClick = (id, clicked) => {
-    console.log("clicked")
+    console.log("clicked id:" + id);
+    let card = this.state.cardData.find(function(i) { return i.id === id});
+
+    if(card.clicked === true) {
+      console.log("alredy clicked");
+      alert("YOU LOST!! Try again!");
+      this.resetGame()
+      return;
+    }
+
     if (this.state.clicked === false) {
       this.scoreCounter();
-      // this.handleChangeObj()
-      this.setState({ [id]: { [clicked]: true } })
+      shuffle(this.state.cardData);
+      this.setState(prev => ({
+        cardData: prev.cardData.map(
+          cd => cd.id === id ? { ...cd, clicked: true }: cd
+        )
+      }));
       console.log(this, "try to change object's clicked value to true")
-      shuffle(cardData)
-    } else {
-      this.resetGame()
     }
   }
  
@@ -37,7 +47,11 @@ class App extends Component {
     const thisGameScore = this.state.currentScore + 1
     this.setState({
       currentScore: thisGameScore
-    })
+    });
+    if(thisGameScore >= 12) {
+      alert("YOU WON!");
+    }
+
     if (thisGameScore >= this.state.highScore) {
       this.setState({ highScore: thisGameScore })
     }
@@ -53,11 +67,6 @@ class App extends Component {
     shuffle(cardData)
   }
 
-  // handleChangeObj = () => ({target: {id, clicked }}) => this.setState({ [id]: { [clicked]: true } });
-  // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
-
- 
-
   render() {
     return (
       <div className="clicky" >
@@ -71,10 +80,10 @@ class App extends Component {
             <Cards
               id={cardData.id}
               key={card.id}
+              keyx={card.id}
               img={card.img}
               title={card.title}
               handleClick={this.handleClick}
-              // handleChangeObj={this.handleChangeObj}
             />
           ))}
         </Wrapper>
