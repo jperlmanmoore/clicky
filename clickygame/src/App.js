@@ -19,44 +19,48 @@ class App extends Component {
     // alert or modal
   }
 
-  handleClick = (id, clicked) => {
+  handleClick = (id) => {
+    // lets me know what card was clicked
     console.log("clicked id:" + id);
-    let card = this.state.cardData.find(function(i) { return i.id === id});
+    let card = this.state.cardData.find(function(i) { return i.id === id})
 
+    // if this case was already clicked the game ends and is reset
     if(card.clicked === true) {
-      console.log("alredy clicked");
-      alert("YOU LOST!! Try again!");
+      console.log("alredy clicked")
+      alert("YOU LOST!! Try again!")
       this.resetGame()
-      return;
+      return
     }
 
+    // if this card has not already been clicked, increment score coutner, random sort, and
+    // change the state of the clicked card from false to true
     if (this.state.clicked === false) {
-      this.scoreCounter();
-      shuffle(this.state.cardData);
+      this.scoreCounter()
+      shuffle(this.state.cardData)
       this.setState(prev => ({
         cardData: prev.cardData.map(
           cd => cd.id === id ? { ...cd, clicked: true }: cd
         )
       }));
-      console.log(this, "try to change object's clicked value to true")
+      console.log(this, "this")
     }
   }
  
- 
+  // socre counter
   scoreCounter = () => {
     const thisGameScore = this.state.currentScore + 1
     this.setState({
       currentScore: thisGameScore
-    });
+    })
     if(thisGameScore >= 12) {
-      alert("YOU WON!");
+      alert("YOU WON!")
     }
-
     if (thisGameScore >= this.state.highScore) {
       this.setState({ highScore: thisGameScore })
     }
   }
 
+  // reset game - sets starting stats and shuffle cards
   resetGame = () => {
     this.setState({
       currentScore: 0,
@@ -67,6 +71,7 @@ class App extends Component {
     shuffle(cardData)
   }
 
+  // render items
   render() {
     return (
       <div className="clicky" >
@@ -80,7 +85,7 @@ class App extends Component {
             <Cards
               id={cardData.id}
               key={card.id}
-              keyx={card.id}
+              keyx={card.id} //have to use this because I think id and key are special in react
               img={card.img}
               title={card.title}
               handleClick={this.handleClick}
