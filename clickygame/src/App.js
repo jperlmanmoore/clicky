@@ -19,10 +19,10 @@ class App extends Component {
     // alert or modal
   }
 
-  handleClick = (id) => {
+  handleClick = id => {
     // lets me know what card was clicked
     console.log("clicked id:" + id);
-    let card = this.state.cardData.find(function(i) { return i.id === id})
+    let card = this.state.cardData.find(i => i.id === id)
 
     // if this case was already clicked the game ends and is reset
     if(card.clicked === true) {
@@ -81,7 +81,7 @@ class App extends Component {
             highScore={this.state.highScore}
           />
           <Title />
-          {this.state.cardData.map((card) => (
+          {this.state.cardData.map(card => (
             <Cards
               id={cardData.id}
               key={card.id}
